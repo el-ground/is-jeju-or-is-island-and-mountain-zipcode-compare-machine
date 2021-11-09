@@ -1,0 +1,71 @@
+{
+  "name": "is-jeju-or-is-island-and-mountain-zipcode-compare-machine",
+  "version": "1.0.0",
+  "description": "Compares multiple sources to identify a reliable set of zip codes that are is-Jeju-or-is-island-and-mountain",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/el-ground/is-jeju-or-is-island-and-mountain-zipcode-compare-machine.git"
+  },
+  "author": "<sjeon@elground.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "14"
+  },
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "package": "tsc --project tsconfig.src.json --skipLibCheck",
+    "start": "yarn package && node dist/src/model/index.js",
+    "json": "yarn package && node dist/src/utils/get-json-from-csv.js"
+  },
+  "jest": {
+    "setupFiles": [
+      "./scripts/jest.setup.ts"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts)$": "ts-jest"
+    },
+    "moduleNameMapper": {
+      "@src/(.*)": "<rootDir>/src/$1",
+      "@framework/(.*)": "<rootDir>/src/framework/$1",
+      "@routers/(.*)": "<rootDir>/src/routers/$1",
+      "@model/(.*)": "<rootDir>/src/model/$1"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "<rootDir>/src/**/*.test.(ts|js)"
+    ]
+  },
+  "_moduleAliases": {
+    "@src": "dist/src",
+    "@framework": "dist/src/framework",
+    "@routers": "dist/src/routers",
+    "@model": "dist/src/model"
+  },
+  "devDependencies": {
+    "@types/flexsearch": "^0.7.2",
+    "@types/jest": "^27.0.1",
+    "@types/node": "14",
+    "cheerio": "^1.0.0-rc.10",
+    "flexsearch": "^0.7.21",
+    "jest": "^27.0.6",
+    "node-fetch": "^3.0.0",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "module-alias": "^2.2.2",
+    "source-map-support": "^0.5.19"
+  }
+}

@@ -1,0 +1,44 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2019,
+        "sourceType": "module"
+    },
+    "extends": [
+        "standard",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/typescript",
+        "plugin:jest/recommended",
+        "prettier",
+        "plugin:prettier/recommended",
+        "prettier/standard",
+        "prettier/@typescript-eslint"
+    ],
+    "plugins": [
+        "@typescript-eslint/eslint-plugin",
+        "import",
+        "jest",
+        "prettier"
+    ],
+    "settings": {
+        "ecmascript": 2019,
+        "import/resolver": {
+            "typescript": {
+              "alwaysTryTypes": true // always try to resolve types under `<root>@types` directory even it doesn"t contain any source code, like `@types/unist`
+            }
+        }
+    },
+    "rules": {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "no-useless-constructor": "off",
+        "@typescript-eslint/no-useless-constructor": "error",
+        "jest/expect-expect": 0,
+        "jest/no-identical-title": 0
+    },
+    "env": {
+        "node": true,
+        "jest/globals": true
+    }
+}
+

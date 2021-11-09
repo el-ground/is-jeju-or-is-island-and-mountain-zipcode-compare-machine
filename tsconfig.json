@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    // Target latest version of ECMAScript.
+    "module": "es6",
+    "target": "ES2019",
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    // Process & infer types from .js files.
+    "allowJs": true,
+    "strictNullChecks": true,
+    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    "strict": true,
+    // Disallow features that require cross-file information for emit.
+    "isolatedModules": true,
+    // Allow JSON import
+    "resolveJsonModule": true,
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "sourceMap": true,
+    "declaration": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": [
+        "src/*"
+      ],
+      "@framework/*": [
+        "src/framework/*"
+      ],
+      "@routers/*": [
+        "src/routers/*"
+      ],
+      "@model/*": [
+        "src/model/*"
+      ]
+    },
+  },
+  "include": [
+    "src/**/*",
+    "scripts/**/*"
+, "export"  ],
+  "exclude": [
+    "node_modules",
+  ]
+}

@@ -1,0 +1,9 @@
+service: node-service-starter
+runtime: nodejs14
+instance_class: F1
+entrypoint: node dist/src/index.js
+
+handlers:
+- url: /.*
+  secure: always
+  script: auto
